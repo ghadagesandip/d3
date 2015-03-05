@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		d3
+	</title>
+	<script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
+</head>
+<body>
+
+<p>D3 tutorial</p>
+
+<p class="alt">D3 tutorial</p>
+<p class="alt">D3 tutorial</p>
+<p class="alt">D3 tutorial</p>
+<p class="alt">D3 tutorial</p>
+<p class="alt">D3 tutorial</p>
+<p class="alt">D3 tutorial</p>
+<p class="alt">D3 tutorial</p>
+<p class="alt">D3 tutorial</p>
+
+<p class="changeSize">text changeSize</p>
+<p class="changeSize">text changeSize</p>
+<p class="changeSize">text changeSize</p>
+<p class="changeSize">text changeSize</p>
+<p class="changeSize">text changeSize</p>
+<p class="changeSize">text changeSize</p>
+<p class="changeSize">text changeSize</p>
+<p class="changeSize">text changeSize</p>
+
+<script type="text/javascript">
+	
+	d3.selectAll("p").style("color", function() {
+	  return "hsl(" + Math.random() * 360 + ",100%,50%)";
+	});
+
+	d3.selectAll("p.alt").style("color", function(d, i) {
+	  return i % 2 ? "#fffa01" : "#e1e45e";
+	});
+
+	d3.selectAll("p.changeSize")
+    .data([4, 8, 15, 16, 23, 42])
+    .style("font-size", function(d) { return d + "px"; });
+
+</script>
+</body>
+</html>
